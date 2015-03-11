@@ -15,9 +15,9 @@
                            <?php if($this->session->userdata('user') == null){ ?>
                                <li class="item-101 current active"><a href="<?php echo base_url() ?>">Home</a></li>
 
-                               <li class="item-134 deeper dropdown parent"><a href="#modal">Programme</a>
+                               <li class="item-134 deeper dropdown parent"><a>Programme</a>
                                    <ul class="sub-menu">
-                                       <li class="item-135"><a href="#module_110">Aujourd'hui</a></li>
+                                       <li class="item-135"><a href="#">Aujourd'hui</a></li>
                                        <li class="item-136 deeper dropdown parent"><a href="<?php echo base_url() ?>programmeDuJour/emissions">Hier</a></li>
                                    </ul>
                                </li>
@@ -25,7 +25,7 @@
                                <li class="item-142"><a href="<?php echo base_url();?>contact">Contacts</a></li>
                            <?php } else{ ?>
                                <li class="item-101 current active"><a href="<?php echo base_url() ?>programmeDuJour/emissionsDuJour">Home</a></li>
-                               <li class="item-134 deeper dropdown parent"><a href="#">Programme</a>
+                               <li class="item-134 deeper dropdown parent"><a>Programme</a>
                                    <ul class="sub-menu">
                                        <li class="item-135"><a href="<?php echo base_url() ?>programmeDuJour/emissions">Aujourd'hui</a></li>
                                        <li class="item-136 deeper dropdown parent"><a href="<?php echo base_url();?>ProgrammesPasses">Hier</a></li>

@@ -5,10 +5,10 @@
 
 	RewriteCond %{REQUEST_FILENAME} !-f
 	RewriteCond %{REQUEST_FILENAME} !-d
-	RewriteRule ^(.*)$ /261channel/index.php/$1 [L]
+	RewriteRule ^(.*)$ /261Channel-frontend/index.php/$1 [L]
 	
 	RewriteCond %{REQUEST_FILENAME} ^($1*assets*$2)$
-	RewriteRule ^(.*)$ /261channel/index.php [F]
+	RewriteRule ^(.*)$ /261Channel-frontend/index.php [F]
 
 </IfModule>
 

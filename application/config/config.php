@@ -14,7 +14,7 @@
 | path to your installation.
 |
 */
-$config['base_url']	= 'http://localhost/261channel/';
+$config['base_url']	= 'http://localhost/261Channel-frontend/';
 
 /*
 |--------------------------------------------------------------------------
