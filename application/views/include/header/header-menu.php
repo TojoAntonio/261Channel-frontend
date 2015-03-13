@@ -12,29 +12,17 @@
                     </div>
                     <nav class="moduletable navigation  span6">
                         <ul class="sf-menu  " id="module-93">
-                            <?php if($this->session->userdata('user') == null){ ?>
-                                <li class="item-101 current active"><a href="#modal">Home</a></li>
-                                <li class="item-134 deeper dropdown parent"><a href="#modal">Programme</a>
-                                    <ul class="sub-menu">
-                                        <li class="item-135"><a href="#module_110">Aujourd'hui</a></li>
-                                        <li class="item-136 deeper dropdown parent"><a href="<?php echo base_url() ?>programmeDuJour/emissions">Hier</a></li>
-                                    </ul>
-                                </li>
-                                <li class="item-141"><a href="#modal">Recherche</a></li>
-                                <li class="item-142"><a href="<?php echo base_url();?>contact">Contacts</a></li>
-                            <?php } else{ ?>
                                 <li class="item-101 current active"><a href="<?php echo base_url() ?>">Home</a></li>
-                                <li class="item-134 deeper dropdown parent"><a href="#">Programme</a>
+                                <li class="item-134 deeper dropdown parent"><a>Programme</a>
                                     <ul class="sub-menu">
                                         <li class="item-135"><a href="<?php echo base_url() ?>programmeDuJour/emissions">Aujourd'hui</a></li>
-                                        <?php if($this->session->userdata('user')!=null){ ?>
-                                            <li class="item-136 deeper dropdown parent"><a href="<?php echo base_url();?>ProgrammesPasses">Hier</a></li>
-                                        <?php } ?>
+                                      <li class="item-136 deeper dropdown parent"><a href="<?php echo base_url();?>ProgrammesPasses">Hier</a></li>
+
                                     </ul>
                                 </li>
                                 <li class="item-141"><a href="<?php echo base_url();?>rechercheAvancee">Recherche</a></li>
                                 <li class="item-142"><a href="<?php echo base_url();?>contact">Contacts</a></li>
-                            <?php } ?>
+
                         </ul>
                         <script>
                             // initialise plugins

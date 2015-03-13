@@ -12,28 +12,16 @@
                     </div>
                     <nav class="moduletable navigation  span6">
                         <ul class="sf-menu  " id="module-93">
-                            <?php if($this->session->userdata('user') == null){ ?>
-                                <li class="item-101"><a href="<?php echo base_url() ?>index.php/programmeDuJour/emissionsDuJour">Home</a></li>
+                                <li class="item-101"><a href="<?php echo base_url() ?>">Home</a></li>
+                                <li class="item-134 deeper dropdown parent current active"><a>Programme</a>
+                                    <ul class="sub-menu">
+                                        <li class="item-135"><a href="<?php echo base_url() ?>programmeDuJour/emissions">Aujourd'hui</a></li>
+                                        <li class="item-136 deeper dropdown parent"><a href="<?php echo base_url();?>ProgrammesPasses">Hier</a></li>
+                                    </ul>
+                                </li>
+                                <li class="item-141"><a href="<?php echo base_url();?>index.php/rechercheAvancee">Recherche</a></li>
+                                <li class="item-142"><a href="<?php echo base_url();?>index.php/contact">Contacts</a></li>
 
-                                <li class="item-134 deeper dropdown parent current active"><a>Programme</a>
-                                    <ul class="sub-menu">
-                                        <li class="item-135"><a href="#">Aujourd'hui</a></li>
-                                        <li class="item-136 deeper dropdown parent"><a href="<?php echo base_url() ?>programmeDuJour/emissions">Hier</a></li>
-                                    </ul>
-                                </li>
-                                <li class="item-141"><a href="<?php echo base_url();?>index.php/rechercheAvancee">Recherche</a></li>
-                                <li class="item-142"><a href="<?php echo base_url();?>index.php/contact">Contacts</a></li>
-                            <?php } else{ ?>
-                                <li class="item-101"><a href="<?php echo base_url() ?>index.php/programmeDuJour/emissionsDuJour">Home</a></li>
-                                <li class="item-134 deeper dropdown parent current active"><a>Programme</a>
-                                    <ul class="sub-menu">
-                                        <li class="item-135"><a href="<?php echo base_url() ?>index.php/programmeDuJour/emissions">Aujourd'hui</a></li>
-                                        <li class="item-136 deeper dropdown parent"><a href="<?php echo base_url();?>index.php/ProgrammesPasses">Hier</a></li>
-                                    </ul>
-                                </li>
-                                <li class="item-141"><a href="<?php echo base_url();?>index.php/rechercheAvancee">Recherche</a></li>
-                                <li class="item-142"><a href="<?php echo base_url();?>index.php/contact">Contacts</a></li>
-                            <?php } ?>
                         </ul>
                         <script>
                             // initialise plugins

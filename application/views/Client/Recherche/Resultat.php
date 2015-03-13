@@ -15,7 +15,7 @@
         <!-- top-menu -->
         <?php $this->load->view('include/header/top-menu.php'); ?>
         <!-- header-top-->
-        <?php $this->load->view('include/header/header-menu.php'); ?>
+        <?php $this->load->view('include/header/header-menu-recherche.php'); ?>
         <!-- liste emissions -->
         <div id="maintop-row">
             <div class="row-container">
@@ -111,7 +111,7 @@
     </div>
 </div>
 <!--footer -->
-<?php $this->load->view('include/footer/footer.php');?>
+<?php $this->load->view('include/footer/footer-recherche.php');?>
 <div id="back-top">
     <a href="#"><span></span> </a>
 </div>
