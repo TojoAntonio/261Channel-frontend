@@ -16,7 +16,7 @@
                                 <li class="item-134 deeper dropdown parent"><a>Programme</a>
                                     <ul class="sub-menu">
                                         <li class="item-135"><a href="<?php echo base_url() ?>programmeDuJour/emissions">Aujourd'hui</a></li>
-                                        <li class="item-136 deeper dropdown parent"><a href="<?php echo base_url();?>ProgrammesPasses">Hier</a></li>
+                                        <li class="item-136 deeper dropdown parent"><a href="<?php echo base_url();?>programmeDuJour/emissionsdHier">Hier</a></li>
                                     </ul>
                                 </li>
                                 <li class="item-141 current active"><a href="<?php echo base_url();?>rechercheAvancee">Recherche</a></li>

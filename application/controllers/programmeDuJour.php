@@ -286,7 +286,7 @@ class ProgrammeDuJour extends CI_Controller{
 
     public function emissions(){
         $date =  date("2015-02-18");
-       //echo $date.'<br/ >';
+       echo $date.'<br/ >';
         if($this->select->getElement('programme', 'idprogramme', 'p_date', $date) == null)
         {
             $data['liste'] = null;
@@ -295,7 +295,7 @@ class ProgrammeDuJour extends CI_Controller{
         {
             $idProgramme = $this->select->getElement('programme', 'idprogramme', 'p_date', $date)[0]->idprogramme;
             //echo $idProgramme;
-            $data['liste'] = $this->select->getSimpleListWhereOrderBy('vueemission', 'cat_libelle, t_libelle, e_nom, e_duree, heure_diffusion, e_picture, e_description, e_zanaka, e_chemin', 'idprogramme', $idProgramme, 'heure_diffusion', 'ASC');
+            $data['liste'] = $this->select->getSimpleListWhereOrderBy('vueemission', 'cat_libelle,p_date,t_libelle, e_nom, e_duree, heure_diffusion, e_picture, e_description, e_zanaka, e_chemin,SUPPRIME', 'idprogramme', $idProgramme, 'heure_diffusion', 'ASC');
             //print_r($data['liste']);
             $data['zanaka'] = array();
             //echo(count($data['liste']));
@@ -322,6 +322,47 @@ class ProgrammeDuJour extends CI_Controller{
         }
         $this->load->view('Client/ProgrammeDuJour/HistoriqueProgrammeO8', $data);
     }
+    public function emissionsdHier(){
+        //$date =  date("2015-02-18");
+        $date = strftime("%y-%m-%d", mktime(0, 0, 0, date('m'), date('d')-1, date('y')));
+
+        echo $date.'<br/ >';
+        if($this->select->getElement('programme', 'idprogramme', 'p_date', $date) == null)
+        {
+            $data['listeHier'] = null;
+        }
+        else
+        {
+            $idProgramme = $this->select->getElement('programme', 'idprogramme', 'p_date', $date)[0]->idprogramme;
+            //echo $idProgramme;
+            $data['listeHier'] = $this->select->getSimpleListWhereOrderBy('vueemission', 'cat_libelle,p_date,t_libelle, e_nom, e_duree, heure_diffusion, e_picture, e_description, e_zanaka, e_chemin,SUPPRIME', 'idprogramme', $idProgramme, 'heure_diffusion', 'ASC');
+            //print_r($data['liste']);
+            $data['zanaka'] = array();
+            //echo(count($data['liste']));
+            for($i = 0; $i < count($data['listeHier']); $i += 1)
+            {
+                if($data['listeHier'][$i]->e_zanaka != null)
+                {
+                    $tab = stringToTab($data['listeHier'][$i]->e_zanaka);
+                    $data['zanaka'][$i] = '';
+                    for($i2 = 0; $i2 < count($tab); $i2 += 1)
+                    {
+                        $data['zanaka'][$i] .= $this->select->getElement('emission', 'e_chemin', 'idemission', $tab[$i2])[0]->e_chemin . '___';
+                    }
+                    //print_r($data['zanaka']);
+                }
+                else
+                {
+                    $data['zanaka'][$i] = $data['listeHier'][$i]->e_chemin;
+                }
+            }
+
+            //print_r($data['liste']);
+            //$data['idProgramme']=$idProgramme;
+        }
+        $this->load->view('Client/ProgrammeDuJour/HistoriqueProgrammeO8', $data);
+    }
+
     public  function lire2($nomEmisssion){
         $chaine=str_replace('%20',' ',$nomEmisssion);
         if($this->select->getElement('emission', 'idemission', 'e_nom', $chaine)!=null){

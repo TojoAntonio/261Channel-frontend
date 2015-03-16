@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-gb" lang="en-gb" >
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/html" xml:lang="en-gb" lang="en-gb">
 
 <!-- Mirrored from livedemo00.template-help.com/joomla_50864/index.php/about by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 03 Feb 2015 22:15:45 GMT -->
 <!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
@@ -22,79 +22,161 @@
             <div class="row-container">
                 <div class="container">
                     <div id="maintop" class="row" style="background: rgba(255, 255, 255, 0.75)">
-                        <section class="moduletable   span12"><header><h3 class="moduleTitle "><span class="item_title_part0">Au programme d'aujourd'hui</span> </h3></header><div class="mod-newsflash-adv coments mod-newsflash-adv__ cols-3" id="module_90">
+                        <?php if(isset($liste)){ ?>
+                            <section class="moduletable   span12"><header><h3 class="moduleTitle "><span class="item_title_part0">Au programme d'aujourd'hui</span> </h3></header><div class="mod-newsflash-adv coments mod-newsflash-adv__ cols-3" id="module_90">
+                                    <!-- liste emission ligne 1 -->
+
+                                    <?php $var=0;
+                                    if(isset($liste)){
+                                        for($ligne=0;$ligne<(sizeof($liste)/3)+1;$ligne++){
+                                            ?>
+                                            <div class="row-fluid">
+                                                <?php for($colonne=0;$colonne<3;$colonne++){
+                                                    if($var==sizeof($liste)){
+                                                        break;
+                                                    }else{
+
+                                                        ?>
+                                                        <article class="span4 item item_num0 item__module  " id="item_68">
+                                                            <!-- Intro Image -->
+                                                            <!-- <figure class="item_img img-intro img-intro__left">
+                                                <a href="http://livedemo00.template-help.com/joomla_50864/index.php/about/34-recommended-videos/68-lorem-ipsum-dolor-sit-amet-conse-ctetur">
+                                                    <img src="http://livedemo00.template-help.com/joomla_50864/plugins/system/tmlazyload/blank.gif" class="lazy" data-src="<?php echo base_url() ?>assets/images/page2-img2.jpg" alt="">
+                                                </a>
+                                            </figure>-->
+                                                            <div class="item_content">
+                                                                <!-- Item title -->
+                                                                <h4 class="item_title item_title__">
+                                                                    <?php if($this->session->userdata('user')!=null){ ?>
+                                                                        <a href="<?php echo(base_url()); ?>programmeDuJour/lire2/<?php echo($liste[$var]->e_nom); ?>"><?php echo($liste[$var]->e_nom); ?> </a>
+                                                                    <?php }
+                                                                    else{ ?>
+                                                                        <a href="#modal"><?php echo($liste[$var]->e_nom); ?> </a>
+
+                                                                    <?php  }
+                                                                    ?>
+                                                                </h4>
+                                                                <time datetime="2014-07-15 06:31" class="item_published"><i class="fa fa-clock-o"></i>
+                                                                    <?php echo($liste[$var]->p_date); ?>
+                                                                </time>
+                                                <span class="komento">
+                                                    <i class="fa fa-comment"></i>
+
+
+                                                    <div class="kmt-readon">
+
+                                                                <span class="kmt-comment aligned-left">
+                                                            <a href="http://livedemo00.template-help.com/joomla_50864/index.php/about/34-recommended-videos/68-lorem-ipsum-dolor-sit-amet-conse-ctetur#section-kmt"><?php echo $var;
+                                                                $var++;
+                                                                ?></a>
+                                                        </span>
+
+                                                    </div>
+
+
+
+                                                </span>
+                                                                <!-- Introtext -->
+                                                                <div class="item_introtext">
+                                                                </div>
+
+                                                                <!-- Read More link -->
+                                                            </div>
+                                                            <div class="clearfix"></div>
+                                                        </article>
+                                                    <?php
+                                                    }
+                                                } ?>
+                                            </div>
+                                        <?php }
+                                    }
+                                    else echo("AUCUN");?>
+                                    <!-- liste emission ligne 1 -->
+
+                                    <div class="clearfix"></div>
+
+                                </div>
+                            </section>
+                        <?php }elseif(isset($listeHier)){ ?>
+                        <section class="moduletable   span12"><header><h3 class="moduleTitle "><span class="item_title_part0">Au programme d'hier</span> </h3></header><div class="mod-newsflash-adv coments mod-newsflash-adv__ cols-3" id="module_90">
                                 <!-- liste emission ligne 1 -->
-                                <?php //echo variant_int(count($liste)/3)+1; ?>
-                                <?php if($liste != null){ ?>
-                                    <?php $i3 = 0; ?>
-                                    <?php if(count($liste) % 3 == 0){ ?>
-                                        <?php $nblines = count($liste)/3 ?>
-                                    <?php } else{ ?>
-                                        <?php $nblines = variant_int(count($liste)/3)+1 ?>
-                                    <?php } ?>
-                                    <?php for($i2 = 0; $i2 < $nblines; $i2 += 1){ ?>
 
+                                <?php $var=0;
+                                if(isset($listeHier)){
+                                    for($ligne=0;$ligne<(sizeof($listeHier)/3)+1;$ligne++){
+                                        ?>
                                         <div class="row-fluid">
-                                            <?php for($i = $i3; $i <$i3+3; $i += 1){ ?>
-                                                <article class="span4 item item_num0 item__module  " id="item_68">
-                                                    <!-- Intro Image -->
-                                                    <figure class="item_img img-intro img-intro__left">
-                                                        <!--<a href="lire/<?php //echo $liste[$i]->e_nom ?>/<?php //echo $zanaka[$i]?>"><?php //echo $liste[$i]->e_nom ?>">-->
-                                                        <a href="lire/<?php echo $liste[$i]->e_nom ?>/<?php echo $zanaka[$i]?>"><?php echo $liste[$i]->e_nom ?>">
-                                                            <img src="http://livedemo00.template-help.com/joomla_50864/plugins/system/tmlazyload/blank.gif" class="lazy" data-src="<?php echo base_url() ?>assets/images/covers/<?php echo $liste[$i]->e_picture ?>" alt="">
-                                                        </a>
-                                                    </figure>
-                                                    <div class="item_content">
-                                                        <!-- Item title -->
-                                                        <h4 class="item_title item_title__">
-                                                            <?php //echo $zanaka[$i] ?>
-                                                            <!--<a href="lire/<?php //echo $liste[$i]->e_nom ?>/<?php //echo $zanaka[$i] ?>"><?php //echo $liste[$i]->e_nom ?></a>-->
-                                                            <a href="lire/<?php echo $liste[$i]->e_nom ?>/<?php echo $zanaka[$i] ?>"><?php echo $liste[$i]->e_nom ?></a>
-                                                        </h4>
-                                                        <time datetime="2014-07-15 06:31" class="item_published">
-                                                            <i class="fa fa-clock-o"></i>
-                                                            <?php echo substr($liste[$i]->heure_diffusion, 0, -3) ?>
-                                                        </time>
-                                                        <span class="komento">
-                                                            <i class="fa fa-comment"></i>
+                                            <?php for($colonne=0;$colonne<3;$colonne++){
+                                                if($var==sizeof($listeHier)){
+                                                    break;
+                                                }else{
+
+                                                    ?>
+                                                    <article class="span4 item item_num0 item__module  " id="item_68">
+                                                        <!-- Intro Image -->
+                                                        <!-- <figure class="item_img img-intro img-intro__left">
+                                                <a href="http://livedemo00.template-help.com/joomla_50864/index.php/about/34-recommended-videos/68-lorem-ipsum-dolor-sit-amet-conse-ctetur">
+                                                    <img src="http://livedemo00.template-help.com/joomla_50864/plugins/system/tmlazyload/blank.gif" class="lazy" data-src="<?php echo base_url() ?>assets/images/page2-img2.jpg" alt="">
+                                                </a>
+                                            </figure>-->
+                                                        <div class="item_content">
+                                                            <!-- Item title -->
+                                                            <h4 class="item_title item_title__">
+                                                                <?php if($this->session->userdata('user')!=null){ ?>
+                                                                    <a href="<?php echo(base_url()); ?>programmeDuJour/lire2/<?php echo($listeHier[$var]->e_nom); ?>"><?php echo($listeHier[$var]->e_nom); ?> </a>
+                                                                <?php }
+                                                                else{ ?>
+                                                                    <a href="#modal"><?php echo($listeHier[$var]->e_nom); ?> </a>
+
+                                                                <?php  }
+                                                                ?>
+                                                            </h4>
+                                                            <time datetime="2014-07-15 06:31" class="item_published"><i class="fa fa-clock-o"></i>
+                                                                <?php echo($listeHier[$var]->p_date); ?>
+                                                            </time>
+                                                <span class="komento">
+                                                    <i class="fa fa-comment"></i>
 
 
-                                                            <div class="kmt-readon">
+                                                    <div class="kmt-readon">
 
-                                                                        <span class="kmt-comment aligned-left">
-                                                                            <!--Gestion de like emission-->
-                                                                            <!--****************************************************-->
-                                                                        <a href="#"></a>
-                                                                        <br/>
-                                                                                Decription : <?php echo substr($liste[$i]->e_description, 0, 40).'...' ?>
-                                                                        </span>
+                                                                <span class="kmt-comment aligned-left">
+                                                            <a href="http://livedemo00.template-help.com/joomla_50864/index.php/about/34-recommended-videos/68-lorem-ipsum-dolor-sit-amet-conse-ctetur#section-kmt"><?php echo $var;
+                                                                $var++;
+                                                                ?></a>
+                                                        </span>
 
+                                                    </div>
+
+
+
+                                                </span>
+                                                            <!-- Introtext -->
+                                                            <div class="item_introtext">
                                                             </div>
 
-
-
-                                                        </span>
-                                                        <!-- Introtext -->
-                                                        <div class="item_introtext">
+                                                            <!-- Read More link -->
                                                         </div>
-
-                                                        <!-- Read More link -->
-                                                    </div>
-                                                    <div class="clearfix"></div>  </article>
-                                                <?php if($i == count($liste)-1) break; ?>
-                                            <?php } ?>
-                                            <?php $i3 += 3; ?>
+                                                        <div class="clearfix"></div>
+                                                    </article>
+                                                <?php
+                                                }
+                                            } ?>
                                         </div>
-                                    <?php } ?>
-                                <?php } else{ ?>
-                                    <h3 style="color: grey"><i>Nous sommes hors service aujourd'hui, il n'y a pas de programme ce jour</i></h3>
-                                <?php } ?>
-                                <!-- liste emissions ligne 2 -->
+                                    <?php }
+                                }
+                                else echo("AUCUN");?>
+                                <!-- liste emission ligne 1 -->
+
                                 <div class="clearfix"></div>
 
                             </div>
                         </section>
-                    </div>
+                        <?php } else { ?>
+                        <section class="moduletable   span12"><header><h3 class="moduleTitle "><span class="item_title_part0">Veuillez nous excuser mais il n'y a pas eu de Programme à ce jour..</span> </h3></header><div class="mod-newsflash-adv coments mod-newsflash-adv__ cols-3" id="module_90">
+                        </section>
+                        <?php } ?>
+                        </div>
                 </div>
             </div>
         </div>

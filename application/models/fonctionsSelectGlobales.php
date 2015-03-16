@@ -16,6 +16,7 @@ class fonctionsSelectGlobales extends CI_Model{
         $result = $this->db->select($colonne)
             ->from($table)
             ->where($reference, $valeurReference)
+            ->where('SUPPRIME',0)
             ->limit(1, 0)
             ->get()
             ->result();
@@ -26,6 +27,7 @@ class fonctionsSelectGlobales extends CI_Model{
         $result = $this->db->select($colonne)
             ->from($table)
             ->where($references)
+            ->where('SUPPRIME',0)
             ->limit(1, 0)
             ->get()
             ->result();
@@ -37,6 +39,7 @@ class fonctionsSelectGlobales extends CI_Model{
     {
         return (int) $this->db
             ->where($references,$v)
+            ->where('SUPPRIME',0)
             ->count_all_results($table);
     }
 
@@ -44,6 +47,7 @@ class fonctionsSelectGlobales extends CI_Model{
     {
         $result = $this->db
             ->where($reference, $valeurReference)
+            ->where('SUPPRIME',0)
             ->count_all_results($table);
         return $result;
     }
@@ -55,6 +59,7 @@ class fonctionsSelectGlobales extends CI_Model{
             ->select_max($colonne)
             ->from($table)
             ->get()
+            ->where('SUPPRIME',0)
             ->result();
     }
 
@@ -63,6 +68,7 @@ class fonctionsSelectGlobales extends CI_Model{
     {
         return $this->db->select($colonnes)
             ->from($table)
+            ->where('SUPPRIME',0)
             ->get()
             ->result();
 
@@ -72,6 +78,7 @@ class fonctionsSelectGlobales extends CI_Model{
     {
         return $this->db->select($colonnes)
             ->from($table)
+            ->where('SUPPRIME',0)
             ->order_by($order, $typeorder)
             ->limit(3,0)
             ->get()
@@ -83,6 +90,7 @@ class fonctionsSelectGlobales extends CI_Model{
     {
         return $this->db->select($colonnes)
             ->from($table)
+            ->where('SUPPRIME',0)
             ->group_by($grouppement)
             ->get()
             ->result();
@@ -94,6 +102,7 @@ class fonctionsSelectGlobales extends CI_Model{
         return $this->db->select($colonnes)
             ->from($table)
             ->where($indication, $valeurindication)
+            ->where('SUPPRIME',0)
             ->get()
             ->result();
     }
@@ -103,6 +112,7 @@ class fonctionsSelectGlobales extends CI_Model{
         return $this->db->select($colonnes)
             ->from($table)
             ->where($indication, $valeurindication)
+            ->where('SUPPRIME',0)
             ->order_by($order, $typeorder)
             ->get()
             ->result();
@@ -113,6 +123,7 @@ class fonctionsSelectGlobales extends CI_Model{
         return $this->db->select($colonnes)
             ->from($table)
             ->where($indication)
+            ->where('SUPPRIME',0)
             ->get()
             ->result();
     }
@@ -122,6 +133,7 @@ class fonctionsSelectGlobales extends CI_Model{
         return $this->db->select($colonnes)
             ->from($table)
             ->where($indication)
+            ->where('SUPPRIME',0)
             ->order_by($order, $typeorder)
             ->get()
             ->result();
@@ -133,6 +145,7 @@ class fonctionsSelectGlobales extends CI_Model{
         return $this->db->select($colonnes)
             ->from($table)
             ->where($indication, $valeurindication)
+            ->where('SUPPRIME',0)
             ->group_by($grouppement)
             ->get()
             ->result();
@@ -144,6 +157,7 @@ class fonctionsSelectGlobales extends CI_Model{
         return $this->db->select($colonnes)
             ->from($table)
             ->like($like)
+            ->where('SUPPRIME',0)
             ->get()
             ->result();
     }
@@ -154,6 +168,7 @@ class fonctionsSelectGlobales extends CI_Model{
         return $this->db->select($colonnes)
             ->from($table)
             ->like($like)
+            ->where('SUPPRIME',0)
             ->group_by($grouppement)
             ->get()
             ->result();
