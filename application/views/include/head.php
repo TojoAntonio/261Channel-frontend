@@ -194,6 +194,7 @@ jQuery(document).ready(function($) {Calendar.setup({
 <link rel="stylesheet" href="<?php echo base_url() ?>assets/styles/css/ie.css" />
 <script src="<?php echo base_url() ?>assets/js/html5shiv.js"></script>
 <script src="<?php echo base_url() ?>assets/js/html5shiv-printshiv.js"></script>
+
 <![endif]-->
 <!--<script type="text/javascript">
     /* <![CDATA[ */

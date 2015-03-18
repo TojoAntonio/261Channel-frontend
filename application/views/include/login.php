@@ -62,7 +62,7 @@
             //alert(link);
             if(log.length !=0 && cod.length !=0){
                 jQuery.ajax({
-                 url: "UserController/connect",
+                 url: "<?php echo base_url()?>UserController/connect",
                  type: "POST",
                  data: { user: log, password:cod},
                  success : function(reponse, statut){
@@ -82,6 +82,7 @@
                      }
                      else{
                         //utiliser donner
+                         balise.innerHTML="Erreur";
                      }
 
                  },

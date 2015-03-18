@@ -1,23 +1,6 @@
 <section class="moduletable   span4"><header><h3 class="moduleTitle "><span class="item_title_part0">Emissions</span> <span class="item_title_part1">populaires</span> </h3></header>
     <div class="mod-newsflash-adv coments mod-newsflash-adv__ cols-1" id="module_110">
-        <script>
-            function liker(iduser,idemission){
-                //alert('iduser='+iduser.toString()+'  idemission='+idemission);
-                $.ajax({
-                    type: "POST",
-                    dataType: "html",
-                    data: {
-                        iduser: iduser,
-                        idemission:idemission
-                    },
-                    url: "/Emission/liker",
-                    success:function(result){
-                        window.location='programmeDuJour/emissionsDuJour'
-                    }
-                });
 
-            }
-        </script>
         <?php if (isset($populaire)){
 
             foreach($populaire as $pop){
@@ -41,7 +24,7 @@
                                     <i class="fa fa-clock-o"></i>
                                     15 Jul 2014 </time>
                                 <span class="komento">
-                                    <a href="#module_110" onclick="liker(<?php echo($this->session->userdata('user')[0]->IDUSER); ?>,<?php echo($pop->IDEMISSION); ?>)"><i class="fa fa-heart-o"></i></a>
+                                   <button  onclick="liker(<?php echo($this->session->userdata('user')[0]->IDUSER); ?>,<?php echo($pop->IDEMISSION); ?>)"><i class="fa fa-heart-o"></i></button>
                                     <div class="kmt-readon">
                                         <span class="kmt-comment aligned-left">
                                              <?php echo($pop->nb_like); ?>

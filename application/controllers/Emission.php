@@ -11,9 +11,10 @@ class Emission extends CI_Controller
 		$this->load->model('fonctionsCRUD', 'crud');
 		$this->load->model('fonctionsSelectGlobales', 'select');
 	}
-    public  function liker($user,$emmission){
-        $tab=array('idEmission'=> $user,'idUser'=>$emmission);
-        //$this->crud->insertData('like',$tab);
+    public  function liker(){
+        $tab=array('idEmission'=> $_POST['idemission'],'idUser'=>$_POST['iduser']);
+        $res=$this->crud->insertData('like',$tab);
+        echo($res);
     }
 	public function ajouter(){
 

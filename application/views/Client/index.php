@@ -8,6 +8,28 @@
     <!-- head -->
 </head>
 <body class="com_content view-category task- itemid-101 body__">
+<script>
+    function testLiker(){
+        alert("Salut!!!!!!");
+    }
+    function liker(iduser,idemission){
+
+       // alert('iduser='+iduser.toString()+'  idemission='+idemission);
+        jQuery.ajax({
+            type: "POST",
+            dataType: "html",
+            data: {
+                iduser: iduser.toString(),
+                idemission:idemission.toString()
+            },
+            url: "<?php echo base_url(); ?>Emission/liker",
+            success:function(result){
+                alert("huhu");
+            }
+        });
+
+    }
+</script>
 
 <div id="wrapper">
 <div class="wrapper-inner">
