@@ -381,7 +381,7 @@ class ProgrammeDuJour extends CI_Controller{
             else $this->lire($chaine,$emission[0]->E_CHEMIN);
             //$ide=$this->select->getElement('emission', 'idemission', 'e_nom', $nomEmisssion);
         }
-        else emissionsDuJour();
+        else $this->emissionsDuJour();
 
 
     }

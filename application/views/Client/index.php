@@ -23,8 +23,11 @@
                 idemission:idemission.toString()
             },
             url: "<?php echo base_url(); ?>Emission/liker",
-            success:function(result){
-                alert("huhu");
+            success:function(){
+                document.location.href="<?php echo(base_url()); ?>";
+            },
+            error:function(){
+                alert("Désolé,vous ne pouvez pas aimer deux fois la meme emission");
             }
         });
 

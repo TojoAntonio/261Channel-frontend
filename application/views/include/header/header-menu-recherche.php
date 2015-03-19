@@ -65,7 +65,7 @@
                                 <li class="item-177"><a class="fright" href="#" onclick="sendDate();" ><img src="http://livedemo00.template-help.com/joomla_50864/plugins/system/tmlazyload/blank.gif" class="lazy" data-src="<?php echo base_url() ?>assets/images/icons/online.png" alt="Online"/><span class="image-title">Online</span> </a>
                                 </li> </ul>
                         </div></div><div class="moduletable search-block  span2"><div role="search" class="mod-search mod-search__search-block">
-                            <form action="http://livedemo00.template-help.com/joomla_50864/index.php" method="post" class="navbar-form">
+                            <form action="<?php echo base_url(); ?>Emission/rechercher" method="post" class="navbar-form">
                                 <label for="searchword" class="element-invisible">Search...</label> <input id="searchword" name="searchword" maxlength="20" class="inputbox mod-search_searchword" type="text" size="20" placeholder=" " required> <input type="image" value="Search" class="button" src="<?php echo base_url() ?>assets/images/icons/searchButton.gif" onclick="this.form.searchword.focus();"/> <input type="hidden" name="task" value="search">
                                 <input type="hidden" name="option" value="com_search">
                                 <input type="hidden" name="Itemid" value="101">

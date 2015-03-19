@@ -55,7 +55,7 @@
 
     <script>
         function testAbonnement(){
-
+            console.log("Entrée test abonnement");
             var log = document.getElementsByName("login")[0].value;
             var cod = document.getElementsByName("code")[0].value;
 
@@ -66,18 +66,22 @@
                  type: "POST",
                  data: { user: log, password:cod},
                  success : function(reponse, statut){
+                     console.log("Succes de l'ajax");
                   // code_html contient le HTML renvoyé
                      if(reponse=="erreur1"){
+                         console.log("erreur1");
                         var balise=document.getElementById("erreur_connexion");
                          balise.innerHTML="Tous les champs sont obligatoire";
                         balise.style.display="block";
                      }
                      if(reponse=="erreur2"){
+                         console.log("erreur2");
                          var balise=document.getElementById("erreur_connexion");
                          balise.innerHTML="Veuillez vérifier votre login ou votre code";
                          balise.style.display="block";
                      }
                      else if(reponse=="ok"){
+                         console.log("ok");
                          document.location.href="<?php echo(base_url()); ?>programmeDuJour/emissionsDuJour";
                      }
                      else{

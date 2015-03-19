@@ -11,6 +11,23 @@ class Emission extends CI_Controller
 		$this->load->model('fonctionsCRUD', 'crud');
 		$this->load->model('fonctionsSelectGlobales', 'select');
 	}
+    public function rechercher(){
+        $word=$this->input->post('searchword');
+        if(isset($word)){
+            $data=array();
+            $i=0;
+            $tab=$this->db->select('*')
+                ->from('vueemission')
+                ->like('E_NOM',$word)
+
+                ->get();
+            foreach($tab->result() as $row){
+                $data['resultat'][$i]=$row;
+                $i++;
+            }
+            $this->load->view('Client/Recherche/Resultat',$data);
+        }
+    }
     public  function liker(){
         $tab=array('idEmission'=> $_POST['idemission'],'idUser'=>$_POST['iduser']);
         $res=$this->crud->insertData('like',$tab);
