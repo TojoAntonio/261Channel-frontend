@@ -1,3 +1,9 @@
+<?php
+header('content-type: text/css');
+$racine = '/261Channel-frontend/';
+?>
+
+
 article,
 aside,
 details,
@@ -197,7 +203,7 @@ body {
   font-size: 13px;
   line-height: 18px;
   color: #777777;
-  background: url("http://localhost/261Channel-frontend/assets/images/bg.jpg") no-repeat center fixed;
+  background: url("<?php echo $racine; ?>assets/images/bg.jpg") no-repeat center fixed;
   background-size: cover;
 
   /*background-color: #ffffff;*/

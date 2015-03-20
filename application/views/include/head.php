@@ -13,7 +13,7 @@
 <link href="http://livedemo00.template-help.com/joomla_50864/index.php/component/search/?format=opensearch" rel="search" title="Search TV channel" type="application/opensearchdescription+xml"/>
 <link rel="stylesheet" href="<?php echo base_url(); ?>assets/googlemaps/plugin_googlemap3.css" type="text/css" />
 <link rel="stylesheet" href="<?php echo base_url(); ?>assets/styles/css/calendar-jos.css" type="text/css" title="Green"  media="all"/>
-<link rel="stylesheet" href="<?php echo base_url(); ?>assets/styles/css/bootstrap.css" type="text/css"/>
+<link rel="stylesheet" href="<?php echo base_url(); ?>assets/styles/php/bootstrap.php" type="text/css"/>
 <link rel="stylesheet" href="<?php echo base_url(); ?>assets/styles/css/default.css" type="text/css"/>
 <link rel="stylesheet" href="<?php echo base_url(); ?>assets/styles/css/template.css" type="text/css"/>
 <link rel="stylesheet" href="<?php echo base_url() ?>assets/styles/css/magnific-popup.css" type="text/css"/>

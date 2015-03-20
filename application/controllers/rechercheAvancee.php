@@ -23,6 +23,7 @@ class RechercheAvancee extends CI_Controller
                                             ->from('vueemission')
                                             ->like('E_NOM',$word)
                                             ->like('p_date',$date)
+                                            ->where('SUPPRIME',0)
                                             ->get();
                 foreach($tab->result() as $row){
                     $data['resultat'][$i]=$row;
