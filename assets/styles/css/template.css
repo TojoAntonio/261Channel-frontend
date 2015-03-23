@@ -763,17 +763,18 @@ ul.social li a:hover {
 /*======================= MAINTOP =======================*/
 #maintop-row {
   padding-top: 34px;
-    /*background: rgba(255, 255, 255, 0.75); /*background transparent*/
+  /*background: rgba(255, 255, 255, 0.75); /*background transparent*/
 }
 /*======================= CONTENT TOP =======================*/
 /*======================= CONTENT =======================*/
 #content-row {
   padding-top: 34px;
+    background: rgba(255, 255, 255, 0.75); /*background transparent*/
 }
 
 #component {
   min-height: 0;
-    background: rgba(255, 255, 255, 0.75); /*background transparent*/
+    /*background: rgba(255, 255, 255, 0.75); /*background transparent*/
 
 }
 .item {
