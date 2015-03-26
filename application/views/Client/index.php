@@ -13,7 +13,8 @@
         alert("Salut!!!!!!");
     }
     function liker(iduser,idemission){
-
+        nbLike=document.getElementById("nb_like").innerHTML;
+        alert(nbLike);
        // alert('iduser='+iduser.toString()+'  idemission='+idemission);
         jQuery.ajax({
             type: "POST",
@@ -24,7 +25,7 @@
             },
             url: "<?php echo base_url(); ?>Emission/liker",
             success:function(){
-                document.location.href="<?php echo(base_url()); ?>";
+                document.location.reload();
             },
             error:function(){
                 alert("Désolé,vous ne pouvez pas aimer deux fois la meme emission");

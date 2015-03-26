@@ -65,7 +65,7 @@
                  url: "<?php echo base_url()?>UserController/connect",
                  type: "POST",
                  data: { user: log, password:cod},
-                 success : function(reponse, statut){
+                 success : function(reponse){
                      console.log("Succes de l'ajax");
                   // code_html contient le HTML renvoyé
                      if(reponse=="erreur1"){
@@ -82,7 +82,8 @@
                      }
                      else if(reponse=="ok"){
                          console.log("ok");
-                         document.location.href="<?php echo(base_url()); ?>programmeDuJour/emissionsDuJour";
+                         //document.location.href="<?php //echo(base_url()); ?>programmeDuJour/emissionsDuJour";
+                         document.location.reload();
                      }
                      else{
                         //utiliser donner

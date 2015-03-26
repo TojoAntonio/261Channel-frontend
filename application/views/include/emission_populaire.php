@@ -26,7 +26,7 @@
                                 <span class="komento">
                                    <button  onclick="liker(<?php echo($this->session->userdata('user')[0]->IDUSER); ?>,<?php echo($pop->IDEMISSION); ?>)"><i class="fa fa-heart-o"></i></button>
                                     <div class="kmt-readon">
-                                        <span class="kmt-comment aligned-left">
+                                        <span id="nb_like" class="kmt-comment aligned-left">
                                              <?php echo($pop->nb_like); ?>
                                         </span>
                                     </div>
@@ -54,7 +54,7 @@
                                 <span class="komento">
                                     <a href="#modal"><i class="fa fa-heart-o"></i></a>
                                     <div class="kmt-readon">
-                                        <span class="kmt-comment aligned-left">
+                                        <span id="nb_like" class="kmt-comment aligned-left">
                                              <?php echo($pop->nb_like); ?>
                                         </span>
                                     </div>
