@@ -1649,8 +1649,14 @@ input.search-query {
   margin-right: 3px;
   margin-left: 0;
 }
+.group-left, .group-right{
+float: left;
+width: 500px;
+margin: 0px 6px;
+}
 .control-group {
   margin-bottom: 9px;
+
 }
 legend + .control-group {
   margin-top: 18px;

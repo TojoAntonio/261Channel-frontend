@@ -12,7 +12,7 @@
                     </div>
                     <nav class="moduletable navigation  span6">
                         <ul class="sf-menu  " id="module-93">
-                                <li class="item-101 current active"><a href="<?php echo base_url() ?>">Home</a></li>
+                                <li class="item-101"><a href="<?php echo base_url() ?>">Home</a></li>
                                 <li class="item-134 deeper dropdown parent"><a>Programme</a>
                                     <ul class="sub-menu">
                                         <li class="item-135"><a href="<?php echo base_url() ?>programmeDuJour/emissions">Aujourd'hui</a></li>
